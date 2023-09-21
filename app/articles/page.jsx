@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./../../public/css/global.css";
 import Image from "next/image";
+import ListArticles from "@/components/list-article";
 
 const articles_datas = [
   {
@@ -28,19 +29,7 @@ function page() {
     <div>
       <h3>Liste des articles</h3>
 
-      {articles_datas.map((item) => {
-        return (
-          <div key={item.id} className="article_card">
-            <Image src="/images/blog.jpg" width={150} height={150} />
-            <div className="more_data">
-              <Link className="link" href={`/articles/${item.id}`}>
-                <h5>{item.title}</h5>
-              </Link>
-              <p>{item.description}</p>
-            </div>
-          </div>
-        );
-      })}
+      <ListArticles articles={articles_datas} />
     </div>
   );
 }

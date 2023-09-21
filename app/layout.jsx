@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavigationLinks from "@/components/NavigationLinks";
 import "./../public/css/global.css";
 
 export const metadata = {
@@ -10,19 +10,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <nav>
-          <Link href="/articles">Articles</Link>
-          <Link href="/auteurs">Auteurs</Link>
-        </nav>
-
-        <div class="topnav">
-          <a class="active" href="#home">
-            Tutoriel Next
-          </a>
-          <a href="#contact">Liste des articles</a>
-        </div>
-
-        <div className="main"> {children}</div>
+        <NavigationLinks />
+        <div> {children}</div>
       </body>
     </html>
   );
